@@ -67,3 +67,109 @@ Sample JSON Request:
 <p>Depending on the number of items in the shopping cart, it can take up to a few seconds or a few minutes to create your order.</p>
 For a Full List of our products and customization properties, please see here:</br>
 http://www.polychemy.com/php/PolychemyAPI.php
+
+<b>PHP Example.</b>
+
+```json
+<?php
+//Set Customer data and shipping details.
+//We Will ship the product to this address.
+$CustomerData = new stdClass();
+$CustomerData->email = "customer@gmail.com";
+$CustomerData->street = "Ave 12";
+$CustomerData->city = "New York";
+$CustomerData->state = "New York";
+$CustomerData->zip = "123232";
+$CustomerData->country = "United Statesd";
+$CustomerData->name = "John Doe";
+$CustomerData->hpnumber = "383748743";
+$CustomerData->occasion = "none";
+//Leave these variables blank.
+$CustomerData->gender = "none";
+$CustomerData->forwho = "none";
+$CustomerData->coupon = "";
+$CustomerData->cdtoken = "";
+
+//send polcyehmy invoice. if false, no invoice will be sent.
+//If oyu want to send your own invoice, then keep this as FALSE.
+$CustomerData->sendinvoice = false;
+
+//Identification Variables
+$referalData = new stdClass();
+
+///***Replace ACCESS ID with the Access ID you were given.
+$referalData->referalID = "[ACCESS ID]";
+$referalData->type = $referalData->referalID;
+
+///Customization Data.
+
+$customizationData = new stdClass();
+$customizationData->customerData = $CustomerData;
+
+//**Set User ID.
+$customizationData->ID = "";
+
+//get referal information if there's any
+$customizationData->referal = $referalData; 
+//set payment type.
+$customizationData->paymentType = "ExternalCart";
+
+//** This is your Secret Key.
+$customizationData->secret = "[SECRET KEY]";
+
+
+//create shopping cart array. add all items into this array.
+$ShoppingCart = array();
+
+//Create a Roman Ring. See Polychemy API Guide for customization details
+$createItem = new stdClass();
+$createItem->script = "RomanRing.py";
+$createItem->turntable = "false";
+$createItem->arguments  = array("Love","Sterling_Silver", "6");
+array_push($ShoppingCart, $createItem);
+
+//Create a Roman Ring. See Polychemy API Guide for customization detail
+$createItem = new stdClass();
+$createItem->script = "SnowFlakeGem.py";
+$createItem->turntable = "false";
+$createItem->arguments  = array("5","Solid_Gold_18k","Yellow_Sapphire", "16 inch Chain (40 cm) - Child");
+array_push($ShoppingCart, $createItem);
+
+$customizationData->ShoppingCart = $ShoppingCart;
+
+//CURL POST Script.
+//set POST variables and URL.
+$url = 'https://www.polychemy.com/php/Order.php';
+$fields = array(
+                        'customerData' => urlencode(json_encode($customizationData)),
+                        'command' => urlencode("addOrder")
+                );
+
+//url-ify the data for the POST
+$fields_string="";
+foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+rtrim($fields_string, '&');
+
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_POST, count($fields));
+curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+//execute post
+if( ! $result = curl_exec($ch)) 
+    { 
+        trigger_error(curl_error($ch)); 
+    } 
+
+echo $result;
+//close connection
+curl_close($ch);
+
+?>
+
+```
