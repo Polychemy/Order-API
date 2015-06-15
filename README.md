@@ -7,7 +7,9 @@ For a Full List of our products and customization properties, please see here:
 
 </p>
 
-<h1> Create Order </h1>
+<h1> Create Order Example</h1>
+<p>In This example we will create an order with 2 items in the shopping cart. 1 Roman Ring & 1 Snow Flake Necklace</p>
+
 HTTP Method : POST<br>
 URL : https://polychemy.com/php/Order.php</br>
 Variable : CustomerData, Command.
