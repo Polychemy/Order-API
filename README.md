@@ -174,8 +174,12 @@ curl_close($ch);
 
 ```
 
-<b>REsponse</b>
+<b>Example Response</b></br>
 Sucessful Responce will return the invoice number:
+
+```Json
+{"result":"OK","invoiceNumber":"INV_25321124_PC","status":"success","data":{"referenceOrderId":"INV_25321124_PC"}}
+```
 
 Failed Response with Error message:
 ```Json
