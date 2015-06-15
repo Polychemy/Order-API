@@ -3,8 +3,8 @@ Place Custom orders directly on polychemy.com.<br>
 HTTP Method : POST
 <p>
 Use this API to palce custom orders in Polychemy. STL files are genrated on the fly and send to our manufacturing network.</br>
-For a Full List of our products and customization properties, please see here:
-
+For a Full List of our products and customization properties, please see here:</br>
+http://www.polychemy.com/php/PolychemyAPI.php
 </p>
 
 <h1> Create Order Example</h1>
@@ -65,4 +65,5 @@ Sample JSON Request:
 ```
 
 <p>Depending on the number of items in the shopping cart, it can take up to a few seconds or a few minutes to create your order.</p>
-
+For a Full List of our products and customization properties, please see here:</br>
+http://www.polychemy.com/php/PolychemyAPI.php
