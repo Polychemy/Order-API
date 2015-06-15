@@ -45,18 +45,20 @@ Sample JSON Request:
 			"script":"RomanRing.py",
 			"turntable":"false",
 			"arguments":[
-			"Love",
-			"Sterling_Silver",
-			"6"]
+				"Love",
+				"Sterling_Silver",
+				"6"
+			]
 		},
 		{
 			"script":"SnowFlakeGem.py",
 			"turntable":"false",
 			"arguments":[
-			"5",
-			"Solid_Gold_18k",
-			"Yellow_Sapphire",
-			"16 inch Chain (40 cm) - Child"]
+				"5",
+				"Solid_Gold_18k",
+				"Yellow_Sapphire",
+				"16 inch Chain (40 cm) - Child"
+			]
 		}
 	]
 }
