@@ -40,25 +40,23 @@ Sample JSON Request:
 "paymentType":"ExternalCart",
 "secret":"[SECRET KEY]",
 "ShoppingCart":[
-	{
-		"script":"RomanRing.py",
-		"turntable":"false",
-		"arguments":[
-		"Love",
-		"Sterling_Silver",
-		"6"
-	]
-	},
-	{
-		"script":"SnowFlakeGem.py",
-		"turntable":"false",
-		"arguments":[
-		"5",
-		"Solid_Gold_18k",
-		"Yellow_Sapphire",
-		"16 inch Chain (40 cm) - Child"
-	]
-	}
+		{
+			"script":"RomanRing.py",
+			"turntable":"false",
+			"arguments":[
+			"Love",
+			"Sterling_Silver",
+			"6"]
+		},
+		{
+			"script":"SnowFlakeGem.py",
+			"turntable":"false",
+			"arguments":[
+			"5",
+			"Solid_Gold_18k",
+			"Yellow_Sapphire",
+			"16 inch Chain (40 cm) - Child"]
+		}
 	]
 }
 
