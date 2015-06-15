@@ -173,3 +173,18 @@ curl_close($ch);
 ?>
 
 ```
+
+<b>REsponse</b>
+Sucessful Responce will return the invoice number:
+
+Failed Response with Error message:
+```Json
+{
+	"status" : "fail",
+	"data" : {
+		"code" : "221",
+		"message" : "Customer Data missing, POST Variable Missing."
+	}
+}'
+
+```
