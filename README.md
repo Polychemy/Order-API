@@ -1,8 +1,7 @@
 # Polychemy's REST Order API. BETA.
 Place Custom orders directly on polychemy.com.<br>
-HTTP Method : POST
 <p>
-Use this API to palce custom orders in Polychemy. STL files are genrated on the fly and send to our manufacturing network.</br>
+Use this API to place custom orders on Polychemy. STL files are generated on the fly and send to our manufacturing network.</br>
 For a Full List of our products and customization properties, please see here:</br>
 http://www.polychemy.com/php/PolychemyAPI.php
 </p>
