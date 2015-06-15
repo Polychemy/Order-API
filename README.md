@@ -10,7 +10,7 @@ http://www.polychemy.com/php/PolychemyAPI.php
 <p>In This example we will create an order with 2 items in the shopping cart. 1 Roman Ring & 1 Snow Flake Necklace</p>
 
 HTTP Method : POST<br>
-URL : https://polychemy.com/php/Order.php</br>
+URL : https://www.polychemy.com/php/Order.php</br>
 Variable : CustomerData, Command.
 
 Sample JSON Request:
