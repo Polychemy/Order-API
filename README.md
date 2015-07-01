@@ -204,7 +204,7 @@ $createItem->Price = "19.99";
 array_push($ShoppingCart, $createItem);
 
 
-//Create a Roman Ring. See Polychemy API Guide for customization detail
+//Create a Snowflake Necklace. See Polychemy API Guide for customization detail
 $createItem = new stdClass();
 $createItem->script = "SnowFlakeGem.py";
 $createItem->turntable = "false";
