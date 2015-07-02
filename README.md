@@ -149,16 +149,17 @@ $CustomerData->ShippingType = "none";
 //Invoice Number.
 //If you wish to set the invoice number manually do so below. Leave blank if not required. This Value is Optional*
 //The invoice number will be used for the shipping slips only.
-$CustomerData->PONumber= "";
+$CustomerData->PONumber= "PO43234234";
+$CustomerData->OrderNumber= "ORDER43234234";
 
 //ReturnTCNumber. Return number for Shipping slips. This is Optional.
-$CustomerData->ReturnTCNumber = "";
+$CustomerData->ReturnTCNumber = "RETURNNUMBER";
 
 //Total Ammount. Set the total price for shipping slip. Leave blank to use Polcyhemy's retail prices instead.
-$CustomerData->TotalAmount = "";
+$CustomerData->TotalAmount = "100.99";
 
 //Total Shipping Cost. Set the total price for shipping slip. Leave blank to use Polcyhemy's prices instead.
-$CustomerData->ShippingCost = "";
+$CustomerData->ShippingCost = "6.50";
 
 //email send polcyehmy invoice. if false, no invoice will be sent via email.
 //If you want to send your own invoice, then keep this as FALSE.
@@ -201,10 +202,11 @@ $createItem->arguments  = array("Liove","Sterling_Silver", "6");
 $createItem->ItemNumber = "008408461s0639";
 $createItem->Description = "Elegant Roman Name Ring";
 $createItem->Price = "19.99";
+$createItem->ConfigID = "31232jjfdhuj3";
 array_push($ShoppingCart, $createItem);
 
 
-//Create a Snowflake Necklace. See Polychemy API Guide for customization detail
+//Create a Roman Ring. See Polychemy API Guide for customization detail
 $createItem = new stdClass();
 $createItem->script = "SnowFlakeGem.py";
 $createItem->turntable = "false";
@@ -213,6 +215,7 @@ $createItem->arguments  = array("6","Solid_Gold_18k","Yellow_Sapphire", "16 inch
 $createItem->ItemNumber = "008408461s0639";
 $createItem->Description = "Elegant SNow Flake";
 $createItem->Price = "59.99";
+$createItem->ConfigID = "31232dasdjjfdhuj3";
 array_push($ShoppingCart, $createItem);
 
 
@@ -220,7 +223,7 @@ array_push($ShoppingCart, $createItem);
 $createItem = new stdClass();
 $createItem->script = "NameRingUpload.py";
 $createItem->turntable = "false";
-$createItem->arguments  = array("Love","Sterling_Silver", "6");
+$createItem->arguments  = array("Lovke","Sterling_Silver", "6");
 //Upload STL file.
 $model = file_get_contents("samples/3LETTERMONOGRAM.stl");
 $createItem->model = base64_encode($model);
@@ -228,6 +231,7 @@ $createItem->model = base64_encode($model);
 $createItem->ItemNumber = "008408461s0639";
 $createItem->Description = "3 Letter Monogram";
 $createItem->Price = "19.99";
+$createItem->ConfigID = "31dasd232jjfdhuj3";
 array_push($ShoppingCart, $createItem);
 
 
