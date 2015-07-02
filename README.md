@@ -40,8 +40,9 @@ Sample JSON Request:
 		"forwho":"none",
 		"coupon":"",
 		"cdtoken":"",
-		"ShippingType":"none",
+		"ShippingType":"USPS",
 		"PONumber":"PO43234234",
+		"OrderNumber":"ORDER43234234",
 		"ReturnTCNumber":"RETURNNUMBER",
 		"TotalAmount":"100.99",
 		"ShippingCost":"6.50",
@@ -49,50 +50,53 @@ Sample JSON Request:
 	},
 	"ID":"",
 	"referal":{
-		"referalID":"[ACCESS ID]",
-		"type":"[ACCESS ID]"
+		"referalID":"WALMART",
+		"type":"WALMART"
 	},
 	"paymentType":"ExternalCart",
-	"secret":"[SECRET KEY]",
+	"secret":"Jhi83dS",
 	"ShoppingCart":[
-	{
-		"script":"RomanRing.py",
-		"turntable":"false",
-		"arguments":[
-			"L23ove",
-			"Sterling_Silver",
-			"6"
-		],
-		"ItemNumber":"008408461s0639",
-		"Description":"Elegant Roman Name Ring",
-		"Price":"19.99"
-	},
-	{
-		"script":"SnowFlakeGem.py",
-		"turntable":"false",
-		"arguments":[
-			"3",
-			"Solid_Gold_18k",
-			"Yellow_Sapphire",
-			"16 inch Chain (40 cm) - Child"
-		],
-		"ItemNumber":"008408461s0639",
-		"Description":"Elegant SNow Flake",
-		"Price":"59.99"
-	},
-	{
-		"script":"NameRingUpload.py",
-		"turntable":"false",
-		"arguments":[
-			"Love",
-			"Sterling_Silver",
-			"6"
-		],
-		"ItemNumber":"008408461s0639",
-		"Description":"3 Letter Monogram",
-		"Price":"19.99",
-		"model":"[BASE 64 ENCODED STL FILE]"
-	}
+		{
+			"script":"RomanRing.py",
+			"turntable":"false",
+			"arguments":[
+				"Love",
+				"Sterling_Silver",
+				"6"
+			],
+			"ItemNumber":"008408461s0639",
+			"Description":"Elegant Roman Name Ring",
+			"Price":"19.99",
+			"ConfigID":"31232jjfdhuj3"
+		},
+		{
+			"script":"SnowFlakeGem.py",
+			"turntable":"false",
+			"arguments":[
+				"6",
+				"Solid_Gold_18k",
+				"Yellow_Sapphire",
+				"16 inch Chain (40 cm) - Child"
+			],
+			"ItemNumber":"008408461s0639",
+			"Description":"Elegant SNow Flake",
+			"Price":"59.99",
+			"ConfigID":"31232dasdjjfdhuj3"
+		},
+		{
+			"script":"NameRingUpload.py",
+			"turntable":"false",
+			"arguments":[
+				"Love",
+				"Sterling_Silver",
+				"6"
+			],
+			"model":"[STL FILE]",
+			"ItemNumber":"008408461s0639",
+			"Description":"3 Letter Monogram",
+			"Price":"19.99",
+			"ConfigID":"31dasd232jjfdhuj3"
+		}
 	]
 }
 
