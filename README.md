@@ -67,6 +67,8 @@ Sample JSON Request:
 			"ItemNumber":"008408461s0639",
 			"Description":"Elegant Roman Name Ring",
 			"Price":"19.99",
+			"Tax":"9.99",
+			"Shipping":"6.50",
 			"ConfigID":"31232jjfdhuj3"
 		},
 		{
@@ -81,6 +83,8 @@ Sample JSON Request:
 			"ItemNumber":"008408461s0639",
 			"Description":"Elegant SNow Flake",
 			"Price":"59.99",
+			"Tax":"9.99",
+			"Shipping":"6.50",
 			"ConfigID":"31232dasdjjfdhuj3"
 		},
 		{
@@ -95,6 +99,8 @@ Sample JSON Request:
 			"ItemNumber":"008408461s0639",
 			"Description":"3 Letter Monogram",
 			"Price":"19.99",
+			"Tax":"9.99",
+			"Shipping":"6.50",
 			"ConfigID":"31dasd232jjfdhuj3"
 		}
 	]
