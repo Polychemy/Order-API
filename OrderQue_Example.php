@@ -129,14 +129,14 @@ array_push($ShoppingCart, $createItem);
 
 $customizationData->ShoppingCart = $ShoppingCart;
 
+$url = 'https://www.polychemy.com/php/OrderQue.php';
+$callBackURL = "http://yourserver/reponse.php";
 
-//CURL POST Script.
-//set POST variables and URL.
-$url = 'https://www.polychemy.com/php/Order.php';
-//$url = 'http://localhost/php/Order.php';
 $fields = array(
-                        'customerData' => urlencode(json_encode($customizationData)),
-                        'command' => urlencode("addOrder")
+
+                      'customerData' => urlencode(json_encode($customizationData)),
+            'callbackURL' => urlencode($callBackURL),
+                       'command' => urlencode("addOrder")
                 );
 
 //url-ify the data for the POST
@@ -160,8 +160,6 @@ if( ! $result = curl_exec($ch))
         trigger_error(curl_error($ch)); 
     } 
 
-echo $result;
 //close connection
 curl_close($ch);
-
 ?>
