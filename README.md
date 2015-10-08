@@ -321,7 +321,7 @@ $callBackURL = "http://yourserver/reponse.php";
 $fields = array(
 						
                       'customerData' => urlencode(json_encode($customizationData)),
-					  'callbackURL' => urlencode($callBackURL)
+			'callbackURL' => urlencode($callBackURL),
                        'command' => urlencode("addOrder")
                 );
 
