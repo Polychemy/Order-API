@@ -304,3 +304,48 @@ Failed Response with Error message:
 }'
 
 ```
+<h1> Create Order Example</h1>
+Order Que allows users to add hundreds of orders a second to our servers with out crashing it.</br>
+Orders are submitted to our system via POST. The orders are stored on a databse and then processed every hour.</br>
+You will need to specifiy a call back address if there any errors or issues.</br>
+<p>
+The API is the same as the regular Order API, accept for 2 main differences</br>
+-You will have to use a new URL : https://www.polychemy.com/php/OrderQue.php</br>
+-You will need to specifiy a call back adress if you want to recieve error messages, though this is optional.</br>
+</p>
+
+```php
+$url = ' https://www.polychemy.com/php/OrderQue.php';
+$callBackURL = "http://yourserver/reponse.php";
+
+$fields = array(
+						
+                      'customerData' => urlencode(json_encode($customizationData)),
+					  'callbackURL' => urlencode($callBackURL)
+                       'command' => urlencode("addOrder")
+                );
+
+//url-ify the data for the POST
+$fields_string="";
+foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+rtrim($fields_string, '&');
+
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_POST, count($fields));
+curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+//execute post
+if( ! $result = curl_exec($ch)) 
+    { 
+        trigger_error(curl_error($ch)); 
+    } 
+
+//close connection
+curl_close($ch);
+```
