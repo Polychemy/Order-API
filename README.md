@@ -304,7 +304,7 @@ Failed Response with Error message:
 }'
 
 ```
-<h1> Create Order Example</h1>
+<h1>Order Que</h1>
 Order Que allows users to add hundreds of orders a second to our servers with out crashing it.</br>
 Orders are submitted to our system via POST. The orders are stored on a databse and then processed every hour.</br>
 You will need to specifiy a call back address if there any errors or issues.</br>
@@ -349,3 +349,23 @@ if( ! $result = curl_exec($ch))
 //close connection
 curl_close($ch);
 ```
+On Success:
+
+```Json
+{"result":"OK","invoiceNumber":"INV_25321124_PC","status":"success","data":{"referenceOrderId":"INV_25321124_PC"}}
+```
+
+Failed Response with Error message:
+```Json
+{
+	"status" : "fail",
+	"data" : {
+		"code" : "221",
+		"message" : "Failed To Add Order."
+	}
+}'
+
+```
+
+*File uuploads are not avilable for theorder que yet. </br>
+*It's best to use the regular OrderAPI for debugging and switch over to OrderQue once you are ready. 
