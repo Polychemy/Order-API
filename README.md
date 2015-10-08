@@ -315,7 +315,7 @@ The API is the same as the regular Order API, accept for 2 main differences</br>
 </p>
 
 ```php
-$url = ' https://www.polychemy.com/php/OrderQue.php';
+$url = 'https://www.polychemy.com/php/OrderQue.php';
 $callBackURL = "http://yourserver/reponse.php";
 
 $fields = array(
