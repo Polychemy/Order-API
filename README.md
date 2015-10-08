@@ -305,7 +305,7 @@ Failed Response with Error message:
 
 ```
 <h1>Order Que</h1>
-Order Que allows users to add hundreds of orders a second to our servers with out crashing it.</br>
+Order Que allows users to add hundreds of orders a minute to our servers with out crashing it.</br>
 Orders are submitted to our system via POST. The orders are stored on a databse and then processed every hour.</br>
 You will need to specifiy a call back address if there any errors or issues.</br>
 <p>
