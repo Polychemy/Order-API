@@ -358,12 +358,13 @@ On Success:
 Failed Response with Error message:
 ```Json
 {
-	"status" : "fail",
-	"data" : {
-		"code" : "221",
-		"message" : "Failed To Add Order."
-	}
-}'
+			"status" : "fail",
+				"data" : {
+				"code" : "11100",
+				"invoiceNumber" : "INV_3123123",
+				"message" : "Failed to Create Model."
+			}
+}
 
 ```
 
