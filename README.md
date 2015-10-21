@@ -356,7 +356,7 @@ Failed Response with Error message:
 *It's best to use the regular OrderAPI for debugging and switch over to OrderQue once you are ready. 
 
 <h1>Upload Your Own Designs</h1>
-You cna also upload your own models to poychemy for amnufacture. The upload feature works with both OrderQue API and Order API.
+You can also upload your own models to Polychemy for Manufacture. The upload feature works with both OrderQue API and Order API.
 
 ```php
 
