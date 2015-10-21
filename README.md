@@ -443,7 +443,7 @@ $ShoppingCart = array();
 $createItem = new stdClass();
 $createItem->script = "NameRingUpload.py";
 $createItem->turntable = "false";
-//$createItem->arguments  = array("Love","Sterling_Silver", "6");
+$createItem->arguments  = array("Love","Sterling_Silver", "6");
 //Specify The file name of the 3d model, this is used as an identifier.
 $createItem->model = "fileName2";
 
