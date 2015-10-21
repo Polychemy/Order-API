@@ -229,22 +229,6 @@ $createItem->ConfigID = "31232dasdjjfdhuj3";
 array_push($ShoppingCart, $createItem);
 
 
-//Upload Your own Name Ring Design.
-$createItem = new stdClass();
-$createItem->script = "NameRingUpload.py";
-$createItem->turntable = "false";
-$createItem->arguments  = array("Lovke","Sterling_Silver", "6");
-//Upload STL file.
-$model = file_get_contents("samples/3LETTERMONOGRAM.stl");
-$createItem->model = base64_encode($model);
-//The following are optional values, used for the shipping slip. These values can be ommited if you wish to use Polychemy values instead.
-$createItem->ItemNumber = "008408461s0639";
-$createItem->Description = "3 Letter Monogram";
-$createItem->Price = "19.99";
-$createItem->ConfigID = "31dasd232jjfdhuj3";
-array_push($ShoppingCart, $createItem);
-
-
 $customizationData->ShoppingCart = $ShoppingCart;
 
 
