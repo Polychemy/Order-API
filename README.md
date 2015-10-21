@@ -354,3 +354,145 @@ Failed Response with Error message:
 
 *File uuploads are not avilable for theorder que yet. </br>
 *It's best to use the regular OrderAPI for debugging and switch over to OrderQue once you are ready. 
+
+<h1>Upload Your Own Designs</h1>
+You cna also upload your own models to poychemy for amnufacture. The upload feature works with both OrderQue API and Order API.
+
+```php
+
+
+//Set Customer data and shipping details.
+//We Will ship the product to this address.
+$CustomerData = new stdClass();
+$CustomerData->email = "customer@gmail.com";
+$CustomerData->street = "Ave 12";
+$CustomerData->city = "New York";
+$CustomerData->state = "New York";
+$CustomerData->zip = "123232";
+$CustomerData->country = "United Statesd";
+$CustomerData->name = "John Doe";
+$CustomerData->hpnumber = "383748743";
+$CustomerData->occasion = "none";
+
+//Billing Adress. These values are optional.
+$CustomerData->Billingstreet = "Ave 12";
+$CustomerData->Billingcity = "New York";
+$CustomerData->Billingstate = "New York";
+$CustomerData->Billingzip = "123232";
+$CustomerData->Billingcountry = "United Statesd";
+$CustomerData->Billingname = "John Doe";
+$CustomerData->Billinghpnumber = "383748743";
+
+//Leave these variables Unchanged.
+$CustomerData->gender = "none";
+$CustomerData->forwho = "none";
+$CustomerData->coupon = "";
+$CustomerData->cdtoken = "";
+
+//Shipping Type: Use "none" for deafault shipping method.
+$CustomerData->ShippingType = "none";
+//$CustomerData->ShippingType = "USPS";
+
+//Invoice Number.
+//If you wish to set the invoice number manually do so below. Leave blank if not required. This Value is Optional*
+//The invoice number will be used for the shipping slips only.
+$CustomerData->PONumber= "PO43234234";
+$CustomerData->OrderNumber= "ORDER43234234";
+
+//ReturnTCNumber. Return number for Shipping slips. This is Optional.
+$CustomerData->ReturnTCNumber = "RETURNNUMBER";
+
+//Total Ammount. Set the total price for shipping slip. Leave blank to use Polcyhemy's retail prices instead.
+$CustomerData->TotalAmount = "100.99";
+
+//Total Shipping Cost. Set the total price for shipping slip. Leave blank to use Polcyhemy's prices instead.
+$CustomerData->ShippingCost = "6.50";
+
+//email send polcyehmy invoice. if false, no invoice will be sent via email.
+//If you want to send your own invoice, then keep this as FALSE.
+$CustomerData->sendinvoice = false;
+
+//Identification Variables
+$referalData = new stdClass();
+
+///***Replace ACCESS ID with the Access ID you were given.
+$referalData->referalID = "[ACCESS ID]";
+$referalData->type = $referalData->referalID;
+
+///Customization Data.
+$customizationData = new stdClass();
+$customizationData->customerData = $CustomerData;
+
+//**Set User ID. Ignore This.
+$customizationData->ID = "";
+
+//get referal information if there's any.
+$customizationData->referal = $referalData; 
+//set payment type. Keep as "ExternalCart".
+$customizationData->paymentType = "ExternalCart";
+
+//** This is your Secret Key.
+$customizationData->secret = "[SECRET KEY]";
+
+
+//create shopping cart array. add all items into this array.
+$ShoppingCart = array();
+
+
+//Upload Your own Name Ring Design.
+$createItem = new stdClass();
+$createItem->script = "NameRingUpload.py";
+$createItem->turntable = "false";
+//$createItem->arguments  = array("Love","Sterling_Silver", "6");
+//Specify The file name of the 3d model, this is used as an identifier.
+$createItem->model = "fileName2";
+
+//The following are optional values, used for the shipping slip. These values can be ommited if you wish to use Polychemy values instead.
+$createItem->ItemNumber = "008408461s0639";
+$createItem->Description = "3 Letter Monogram";
+$createItem->Price = "19.99";
+$createItem->ConfigID = "31dasd232jjfdhuj3";
+array_push($ShoppingCart, $createItem);
+
+
+
+
+$customizationData->ShoppingCart = $ShoppingCart;
+
+
+
+//CURL POST Script.
+//set POST variables and URL.
+$url = 'https://www.polychemy.com/php/Order.php';
+
+$cfile = curl_file_create('C:/samples/BITRING.stl','application/sla','test_name');
+
+$fields = array(
+				  'customerData' => json_encode($customizationData),
+					'fileName1' => $cfile,
+					'fileName2' => $cfile2,
+				   'command' => "addOrder"
+                );
+
+
+
+//open connection
+$ch = curl_init();
+
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_POST, count($fields));
+curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+//execute post
+if( ! $result = curl_exec($ch)) 
+    { 
+        trigger_error(curl_error($ch)); 
+    } 
+
+echo $result;
+//close connection
+curl_close($ch);
+```
