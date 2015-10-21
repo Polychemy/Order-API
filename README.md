@@ -470,7 +470,6 @@ $cfile = curl_file_create('C:/samples/BITRING.stl','application/sla','test_name'
 $fields = array(
 				  'customerData' => json_encode($customizationData),
 					'fileName1' => $cfile,
-					'fileName2' => $cfile2,
 				   'command' => "addOrder"
                 );
 
