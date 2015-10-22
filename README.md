@@ -445,7 +445,7 @@ $createItem->script = "NameRingUpload.py";
 $createItem->turntable = "false";
 $createItem->arguments  = array("Love","Sterling_Silver", "6");
 //Specify The file name of the 3d model, this is used as an identifier.
-$createItem->model = "fileName2";
+$createItem->model = "fileName1";
 
 //The following are optional values, used for the shipping slip. These values can be ommited if you wish to use Polychemy values instead.
 $createItem->ItemNumber = "008408461s0639";
